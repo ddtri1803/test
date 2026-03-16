@@ -1,30 +1,72 @@
 const PRODUCT_FILE = 'danh_muc_san_pham_da_lieu.csv';
 const REGIMEN_FILE = 'bo_san_pham_lieu_trinh_da_lieu.csv';
 
-// Ảnh thực tế về sản phẩm skincare/dermatology (nguồn ảnh công khai từ Unsplash)
-const productImages = {
-  'DL-SRM-001': 'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=1000&q=80',
-  'DL-TON-002': 'https://images.unsplash.com/photo-1629198688000-71f23e745b6e?auto=format&fit=crop&w=1000&q=80',
-  'DL-SER-003': 'https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?auto=format&fit=crop&w=1000&q=80',
-  'DL-SER-004': 'https://images.unsplash.com/photo-1607602132700-06825845be6c?auto=format&fit=crop&w=1000&q=80',
-  'DL-CRM-005': 'https://images.unsplash.com/photo-1625772452859-1c03d5bf1137?auto=format&fit=crop&w=1000&q=80',
-  'DL-SS-006': 'https://images.unsplash.com/photo-1596755389378-c31d21fd1273?auto=format&fit=crop&w=1000&q=80',
-  'DL-ACN-007': 'https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?auto=format&fit=crop&w=1000&q=80',
-  'DL-RET-008': 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1000&q=80'
-};
+function createLocalImage(code, name) {
+  const safeName = (name || '').replace(/[<&>]/g, '');
+  const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='800' height='500'>
+    <defs><linearGradient id='g' x1='0' x2='1' y1='0' y2='1'><stop offset='0%' stop-color='#1d4ed8'/><stop offset='100%' stop-color='#0ea5e9'/></linearGradient></defs>
+    <rect width='100%' height='100%' fill='url(#g)'/>
+    <text x='50%' y='42%' dominant-baseline='middle' text-anchor='middle' font-size='36' fill='white' font-family='Arial' font-weight='bold'>${code}</text>
+    <text x='50%' y='56%' dominant-baseline='middle' text-anchor='middle' font-size='24' fill='white' font-family='Arial'>${safeName}</text>
+    <text x='50%' y='74%' dominant-baseline='middle' text-anchor='middle' font-size='16' fill='#dbeafe' font-family='Arial'>Hình minh họa sản phẩm</text>
+  </svg>`;
+  return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+}
 
-const fallbackImage = 'https://images.unsplash.com/photo-1556228720-da6dad2d5f1a?auto=format&fit=crop&w=1000&q=80';
+function splitCSVLine(line) {
+  const values = [];
+  let current = '';
+  let inQuotes = false;
 
-function parseCSV(filePath) {
-  return new Promise((resolve, reject) => {
-    Papa.parse(filePath, {
-      download: true,
-      header: true,
-      skipEmptyLines: true,
-      complete: (results) => resolve(results.data),
-      error: (error) => reject(error)
+  for (let i = 0; i < line.length; i += 1) {
+    const ch = line[i];
+    if (ch === '"') {
+      if (inQuotes && line[i + 1] === '"') {
+        current += '"';
+        i += 1;
+      } else {
+        inQuotes = !inQuotes;
+      }
+    } else if (ch === ',' && !inQuotes) {
+      values.push(current);
+      current = '';
+    } else {
+      current += ch;
+    }
+  }
+
+  values.push(current);
+  return values.map((v) => v.trim());
+}
+
+function parseCSVText(csvText) {
+  const lines = csvText
+    .replace(/^\uFEFF/, '')
+    .split(/\r?\n/)
+    .filter((line) => line.trim().length > 0);
+
+  if (lines.length < 2) {
+    return [];
+  }
+
+  const headers = splitCSVLine(lines[0]);
+  return lines.slice(1).map((line) => {
+    const values = splitCSVLine(line);
+    const row = {};
+    headers.forEach((header, index) => {
+      row[header] = values[index] ?? '';
     });
+    return row;
   });
+}
+
+async function parseCSV(filePath) {
+  const response = await fetch(filePath);
+  if (!response.ok) {
+    throw new Error(`Không tìm thấy file: ${filePath} (HTTP ${response.status})`);
+  }
+  const csvText = await response.text();
+  return parseCSVText(csvText);
 }
 
 function renderProducts(products) {
@@ -32,11 +74,11 @@ function renderProducts(products) {
   grid.innerHTML = '';
 
   products.forEach((p) => {
-    const image = productImages[p['Mã sản phẩm']] || fallbackImage;
+    const image = createLocalImage(p['Mã sản phẩm'], p['Tên sản phẩm']);
     const item = document.createElement('article');
     item.className = 'bg-slate-50 border border-slate-200 rounded-xl overflow-hidden';
     item.innerHTML = `
-      <img src="${image}" alt="Hình ảnh sản phẩm ${p['Tên sản phẩm']}" class="w-full h-48 object-cover" loading="lazy" />
+      <img src="${image}" alt="Hình sản phẩm ${p['Tên sản phẩm']}" class="w-full h-48 object-cover" loading="lazy" />
       <div class="p-4 space-y-2 text-sm">
         <div class="flex items-center justify-between gap-2">
           <span class="inline-block px-2 py-1 rounded bg-slate-200 text-slate-800 text-xs font-semibold">${p['Mã sản phẩm']}</span>
@@ -48,7 +90,7 @@ function renderProducts(products) {
         <p><b>Thành phần:</b> ${p['Thành phần nổi bật']}</p>
         <p><b>Cách dùng:</b> ${p['Cách dùng']}</p>
         <p class="text-slate-700"><b>Giới thiệu:</b> ${p['Giới thiệu sản phẩm']}</p>
-        <p class="font-semibold text-emerald-700">Giá tham khảo: ${Number(p['Giá tham khảo (VNĐ)']).toLocaleString('vi-VN')} VNĐ</p>
+        <p class="font-semibold text-emerald-700">Giá tham khảo: ${Number(p['Giá tham khảo (VNĐ)'] || 0).toLocaleString('vi-VN')} VNĐ</p>
       </div>
     `;
     grid.appendChild(item);
@@ -122,7 +164,7 @@ async function start() {
     renderRegimens(regimens, productsByCode);
     attachSearch(products);
   } catch (error) {
-    document.body.innerHTML = `<div class="max-w-3xl mx-auto p-6"><h1 class="text-xl font-bold mb-2">Không thể đọc dữ liệu CSV</h1><p>Vui lòng chạy web bằng server local (ví dụ: <code>python -m http.server 8000</code>) rồi truy cập <code>http://localhost:8000</code>.</p><pre class="mt-4 bg-slate-100 p-3 rounded text-xs">${String(error)}</pre></div>`;
+    document.body.innerHTML = `<div class="max-w-3xl mx-auto p-6"><h1 class="text-xl font-bold mb-2">Không thể tải dữ liệu</h1><p class="mb-2">Lỗi chính: ${String(error)}</p><p>Hãy đảm bảo 2 file CSV cùng thư mục với <code>index.html</code>, rồi chạy bằng server local: <code>python -m http.server 8000</code>.</p></div>`;
   }
 }
 

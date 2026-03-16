@@ -1,0 +1,38 @@
+:root{
+  --medical-blue:#2F5D8A;
+  --medical-blue-dark:#234b72;
+  --soft-beige:#F8F5F1;
+  --light-grey:#F3F4F6;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+
+.nav-link{color:#334155;transition:.2s}
+.nav-link:hover{color:var(--medical-blue)}
+
+.btn-primary{display:inline-block;background:var(--medical-blue);color:#fff;padding:.75rem 1.5rem;border-radius:9999px;font-weight:600;transition:.2s;border:1px solid var(--medical-blue)}
+.btn-primary:hover{background:var(--medical-blue-dark);border-color:var(--medical-blue-dark)}
+
+.btn-secondary{display:inline-block;border:1px solid var(--medical-blue);color:var(--medical-blue);padding:.5rem 1rem;border-radius:9999px;font-weight:600;transition:.2s;background:#fff}
+.btn-secondary:hover{background:var(--medical-blue);color:#fff}
+
+.card{background:#fff;padding:1.5rem;border-radius:1rem;border:1px solid #e2e8f0;box-shadow:0 2px 10px rgba(15,23,42,.04)}
+.card-title{font-family:'Playfair Display',serif;font-size:1.5rem;line-height:1.2;margin-bottom:.5rem;color:var(--medical-blue)}
+.section-title{font-family:'Playfair Display',serif;font-size:2rem;line-height:1.2;color:#0f172a;margin-bottom:.5rem}
+
+.pill{display:block;text-align:center;border:1px solid #cbd5e1;border-radius:9999px;padding:.75rem 1rem;font-weight:500;transition:.2s;background:#fff}
+.pill:hover{border-color:var(--medical-blue);color:var(--medical-blue)}
+
+.phase{padding:1.25rem;border-radius:.75rem;border:1px solid #e2e8f0;background:#fff}
+
+.kpi{border:1px solid #dbeafe;background:#f8fbff;border-radius:.75rem;padding:1rem}
+.kpi strong{display:block;font-size:1.5rem;color:var(--medical-blue)}
+
+.program-nav{position:sticky;top:84px;z-index:10;background:#fff;border:1px solid #e2e8f0;border-radius:.75rem;padding:.75rem}
+.program-nav a{display:block;padding:.45rem .55rem;border-radius:.5rem;color:#334155;font-size:.95rem}
+.program-nav a:hover{background:#eff6ff;color:var(--medical-blue)}
+
+.cta-band{background:linear-gradient(135deg,#2F5D8A,#3D77AF);color:#fff;border-radius:1rem;padding:1.5rem}
+
+.sticky-mobile-cta{position:sticky;bottom:.75rem;z-index:30}

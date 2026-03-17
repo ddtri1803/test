@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Derma Protocol | Guided Treatment Journey</title>
+    <title>Derma Protocol | Dermatology System</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
@@ -17,12 +17,12 @@
     <header class="border-b border-slate-200 bg-white/95 sticky top-0 z-20">
       <nav class="max-w-6xl mx-auto px-4 py-4 flex flex-wrap items-center justify-between gap-4">
         <a href="index.html" class="font-heading text-2xl text-medicalBlue">Derma Protocol</a>
-        <ul class="flex flex-wrap items-center gap-4 text-sm md:text-base">
-          <li><a class="nav-link" href="skin-problems.html">Skin Concerns</a></li>
-          <li><a class="nav-link" href="treatment-programs.html">Programs</a></li>
-          <li><a class="nav-link" href="results.html">Results</a></li>
-          <li><a class="nav-link" href="blog.html">Blog</a></li>
+        <ul class="flex flex-wrap items-center gap-3 text-sm md:text-base">
+          <li><a class="nav-link" href="#journey">How It Works</a></li>
+          <li><a class="nav-link" href="results.html">Patient Results</a></li>
+          <li><a class="nav-link" href="blog.html">Medical Insights</a></li>
           <li><a class="btn-secondary" href="consultation.html">Consultation</a></li>
+          <li><a class="btn-primary" href="skin-diagnosis.html">Start Diagnosis</a></li>
         </ul>
       </nav>
     </header>
@@ -31,43 +31,41 @@
       <section class="bg-softBeige py-16">
         <div class="max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-8 items-center">
           <div>
-            <p class="uppercase tracking-[0.2em] text-xs text-medicalBlue font-semibold">Guided Treatment Journey</p>
-            <h1 class="font-heading text-4xl md:text-5xl mt-4">From Skin Concern to Clinical Results</h1>
-            <p class="text-slate-600 mt-4">Thay vì cho khách tự đi lạc giữa nhiều trang, hệ thống sẽ dẫn theo hành trình chuẩn: concern → diagnosis → plan → treatment → results.</p>
+            <p class="uppercase tracking-[0.2em] text-xs text-medicalBlue font-semibold">Clinical Treatment System</p>
+            <h1 class="font-heading text-4xl md:text-5xl mt-4">You don’t choose treatment. The system prescribes it.</h1>
+            <p class="text-slate-600 mt-4">Derma Protocol không hoạt động như website nội dung. Đây là hệ thống điều trị: bắt đầu từ chẩn đoán, sau đó hệ thống mới sinh ra phác đồ và sản phẩm phù hợp.</p>
             <div class="mt-7 flex flex-wrap gap-3">
-              <a href="skin-diagnosis.html" class="btn-primary">Start Skin Diagnosis</a>
-              <a href="consultation.html" class="btn-secondary">Talk to Specialist</a>
+              <a href="skin-diagnosis.html" class="btn-primary">Start Diagnosis (Entry Point)</a>
+              <a href="consultation.html" class="btn-secondary">Need Doctor Support</a>
             </div>
           </div>
           <div class="card">
-            <h2 class="font-heading text-2xl mb-4">Treatment Flow</h2>
+            <h2 class="font-heading text-2xl mb-4">System Journey</h2>
             <div class="flow-steps">
               <div class="flow-step active"><strong>Step 1</strong>Diagnosis</div>
-              <div class="flow-step"><strong>Step 2</strong>Plan</div>
-              <div class="flow-step"><strong>Step 3</strong>Treatment</div>
-              <div class="flow-step"><strong>Step 4</strong>Results</div>
+              <div class="flow-step"><strong>Step 2</strong>Plan Generated</div>
+              <div class="flow-step"><strong>Step 3</strong>Protocol Treatment</div>
+              <div class="flow-step"><strong>Step 4</strong>Tracked Results</div>
             </div>
+            <p class="text-sm text-slate-600 mt-4">Nếu chưa có diagnosis, mọi thông tin khác chỉ mang tính tham khảo.</p>
           </div>
         </div>
       </section>
 
-      <section class="py-14">
-        <div class="max-w-6xl mx-auto px-4">
-          <h2 class="section-title">Choose your skin concern</h2>
-          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
-            <a href="skin-problems.html#acne" class="pill">Acne</a>
-            <a href="skin-problems.html#melasma" class="pill">Melasma</a>
-            <a href="skin-problems.html#rosacea" class="pill">Rosacea</a>
-            <a href="skin-problems.html#sensitive" class="pill">Sensitive Skin</a>
-          </div>
+      <section id="journey" class="py-14">
+        <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-4 gap-4">
+          <article class="card"><h3 class="font-semibold text-medicalBlue">1) Intake</h3><p class="text-sm mt-2">Khai báo loại da, vấn đề hoạt động, độ nhạy cảm, hình ảnh da.</p></article>
+          <article class="card"><h3 class="font-semibold text-medicalBlue">2) Engine</h3><p class="text-sm mt-2">Hệ thống phân tầng mức độ và tạo protocol cá nhân hóa.</p></article>
+          <article class="card"><h3 class="font-semibold text-medicalBlue">3) Protocol</h3><p class="text-sm mt-2">Điều trị theo phase và kit đồng bộ, không tự mix ngẫu nhiên.</p></article>
+          <article class="card"><h3 class="font-semibold text-medicalBlue">4) Follow-up</h3><p class="text-sm mt-2">Theo dõi đáp ứng để điều chỉnh tần suất/nồng độ an toàn.</p></article>
         </div>
       </section>
 
       <section class="py-14 bg-lightGrey">
         <div class="max-w-6xl mx-auto px-4">
           <div class="cta-band text-center">
-            <h2 class="font-heading text-3xl">Next step: Start diagnosis to unlock your treatment plan</h2>
-            <p class="mt-3 text-blue-100">Diagnosis is now the primary action across the site.</p>
+            <h2 class="font-heading text-3xl">Start with diagnosis, not with product browsing</h2>
+            <p class="mt-3 text-blue-100">Điểm vào bắt buộc của hệ thống là chẩn đoán da.</p>
             <a href="skin-diagnosis.html" class="inline-block mt-6 bg-white text-medicalBlue font-semibold px-6 py-3 rounded-full">Start Skin Diagnosis</a>
           </div>
         </div>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Programs | Derma Protocol</title>
+    <title>Protocol Outcomes | Derma Protocol</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
@@ -15,12 +15,12 @@
     <header class="border-b border-slate-200 bg-white/95 sticky top-0 z-20">
       <nav class="max-w-6xl mx-auto px-4 py-4 flex flex-wrap items-center justify-between gap-4">
         <a href="index.html" class="font-heading text-2xl text-medicalBlue">Derma Protocol</a>
-        <ul class="flex flex-wrap gap-4 items-center text-sm md:text-base">
-          <li><a class="nav-link" href="skin-problems.html">Skin Concerns</a></li>
-          <li><a class="nav-link" href="treatment-programs.html">Programs</a></li>
-          <li><a class="nav-link" href="results.html">Results</a></li>
-          <li><a class="nav-link" href="blog.html">Blog</a></li>
+        <ul class="flex flex-wrap items-center gap-3 text-sm md:text-base">
+          <li><a class="nav-link" href="index.html#journey">How It Works</a></li>
+          <li><a class="nav-link" href="results.html">Patient Results</a></li>
+          <li><a class="nav-link" href="blog.html">Medical Insights</a></li>
           <li><a class="btn-secondary" href="consultation.html">Consultation</a></li>
+          <li><a class="btn-primary" href="skin-diagnosis.html">Start Diagnosis</a></li>
         </ul>
       </nav>
     </header>
@@ -28,31 +28,34 @@
     <main>
       <section class="bg-softBeige py-14">
         <div class="max-w-6xl mx-auto px-4">
-          <h1 class="font-heading text-4xl">Treatment Programs</h1>
-          <p class="mt-3 text-slate-600">Programs hiển thị để khách hiểu framework điều trị, nhưng điểm vào thực tế vẫn là diagnosis.</p>
+          <h1 class="font-heading text-4xl">Generated Protocol Outcomes (Not Selectable)</h1>
+          <p class="mt-3 text-slate-600">Đây là thư viện minh họa những loại protocol mà hệ thống có thể tạo ra sau diagnosis. Không phải danh sách để người dùng tự chọn.</p>
           <div class="flow-steps mt-6 max-w-3xl">
             <div class="flow-step active"><strong>Step 1</strong>Diagnosis</div>
-            <div class="flow-step"><strong>Step 2</strong>Plan</div>
-            <div class="flow-step"><strong>Step 3</strong>Treatment</div>
+            <div class="flow-step"><strong>Step 2</strong>Plan Generated</div>
+            <div class="flow-step"><strong>Step 3</strong>Protocol Treatment</div>
             <div class="flow-step"><strong>Step 4</strong>Results</div>
           </div>
-          <a href="skin-diagnosis.html" class="btn-primary mt-6">Start Skin Diagnosis to Match Program</a>
+          <div class="card mt-6 border-2 border-blue-100">
+            <p class="font-semibold text-medicalBlue">System Rule:</p>
+            <p class="text-sm mt-2">Bạn không thể vào treatment trực tiếp từ trang này. Bắt buộc phải đi qua diagnosis để hệ thống gán đúng protocol.</p>
+          </div>
         </div>
       </section>
 
       <section class="py-14">
         <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-6">
-          <article class="card"><h2 class="card-title">Acne Control Program</h2><p>Protocol 12 tuần theo phase để giảm mụn, ổn định da, ngừa tái phát.</p></article>
-          <article class="card"><h2 class="card-title">Pigmentation Program</h2><p>Điều trị nám/sạm theo nguyên tắc phục hồi da + ức chế sắc tố + UV defense.</p></article>
-          <article class="card"><h2 class="card-title">Barrier Repair Program</h2><p>Dành cho da nhạy cảm/kích ứng, ưu tiên phục hồi trước khi treatment nâng cao.</p></article>
+          <article class="card"><h2 class="card-title">Acne Control Protocol</h2><p>Ví dụ outcome khi hệ thống nhận diện mụn viêm hoạt động + tăng tiết dầu.</p></article>
+          <article class="card"><h2 class="card-title">Pigmentation Protocol</h2><p>Ví dụ outcome khi hệ thống nhận diện sắc tố + nguy cơ tái phát do UV.</p></article>
+          <article class="card"><h2 class="card-title">Barrier Recovery Protocol</h2><p>Ví dụ outcome khi hệ thống ưu tiên phục hồi dung nạp da trước treatment mạnh.</p></article>
         </div>
       </section>
 
       <section class="pb-16">
         <div class="max-w-6xl mx-auto px-4">
           <div class="cta-band text-center">
-            <h2 class="font-heading text-3xl">Next step: convert framework into your personal plan</h2>
-            <p class="mt-2 text-blue-100">Bấm chẩn đoán để hệ thống chọn đúng protocol thay vì tự chọn chương trình ngẫu nhiên.</p>
+            <h2 class="font-heading text-3xl">Unlock your actual protocol</h2>
+            <p class="mt-2 text-blue-100">Chỉ diagnosis mới tạo được plan thật cho cá nhân bạn.</p>
             <a href="skin-diagnosis.html" class="inline-block mt-6 bg-white text-medicalBlue font-semibold px-6 py-3 rounded-full">Start Skin Diagnosis</a>
           </div>
         </div>

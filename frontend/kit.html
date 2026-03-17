@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Interactive Kit • Frontend Theme</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com"></script><script>tailwind.config={theme:{extend:{colors:{medicalBlue:'#2F5D8A'}}}}</script><link rel="stylesheet" href="../assets/css/theme.css" /></head>
+<body data-state="diagnosed" data-step="kit" class="bg-white text-slate-800">
+<header class="border-b border-slate-200"><nav class="max-w-7xl mx-auto px-4 py-4 flex justify-between"><a href="index.html" class="heading text-2xl text-medicalBlue">Derma System Theme</a><a href="monitoring.html" class="text-medicalBlue">Next: Monitoring →</a></nav></header>
+<main class="max-w-6xl mx-auto px-4 py-8 space-y-6">
+<section class="ui-card"><p class="state-chip">State: <span data-state-label></span></p><div class="demo-switch mt-3 flex gap-2"><button data-set-state="pre-diagnosis" class="px-3 py-2 border rounded-full text-sm">Pre-diagnosis</button><button data-set-state="diagnosed" class="px-3 py-2 border rounded-full text-sm">Diagnosed</button><button data-set-state="active-treatment" class="px-3 py-2 border rounded-full text-sm">Active treatment</button></div></section>
+<section class="grid md:grid-cols-4 gap-3"><div data-flow-step class="flow-step"><strong>Diagnosis</strong><span class="bi-vi">Chẩn đoán</span></div><div data-flow-step class="flow-step"><strong>Plan</strong><span class="bi-vi">Phác đồ</span></div><div data-flow-step class="flow-step"><strong>Kit</strong><span class="bi-vi">Bộ liệu trình</span></div><div data-flow-step class="flow-step"><strong>Monitoring</strong><span class="bi-vi">Theo dõi</span></div></section>
+
+<section class="ui-card">
+  <h1 class="heading text-3xl">Interactive product roles</h1>
+  <p class="bi-en">Click each role to expand details and see phase relationship.</p>
+  <p class="bi-vi">Nhấn vào từng vai trò để mở chi tiết và xem liên kết với phase.</p>
+
+  <div class="mt-4 space-y-3">
+    <article class="role-item border rounded-xl p-3">
+      <button data-role-target="r1" class="w-full text-left font-semibold">Barrier Support Role</button>
+      <div data-role-panel="r1" class="hidden mt-2 text-sm">
+        <p><strong>Phase:</strong> 1 → 3</p><p><strong>Purpose:</strong> Maintain tolerance for actives.</p><p class="text-slate-500">Duy trì độ dung nạp để da đáp ứng tốt với hoạt chất.</p>
+      </div>
+    </article>
+    <article class="role-item border rounded-xl p-3">
+      <button data-role-target="r2" class="w-full text-left font-semibold">Active Control Role</button>
+      <div data-role-panel="r2" class="hidden mt-2 text-sm">
+        <p><strong>Phase:</strong> 2</p><p><strong>Purpose:</strong> Reduce active lesions under supervision.</p><p class="text-slate-500">Giảm tổn thương đang hoạt động dưới kiểm soát cường độ.</p>
+      </div>
+    </article>
+    <article class="role-item border rounded-xl p-3">
+      <button data-role-target="r3" class="w-full text-left font-semibold">Protection Role</button>
+      <div data-role-panel="r3" class="hidden mt-2 text-sm">
+        <p><strong>Phase:</strong> 1 → 3 daily</p><p><strong>Purpose:</strong> Protect outcomes and lower relapse risk.</p><p class="text-slate-500">Bảo vệ kết quả và giảm nguy cơ tái phát theo thời gian.</p>
+      </div>
+    </article>
+  </div>
+
+  <a href="monitoring.html" class="inline-block mt-6 px-5 py-3 rounded-full bg-medicalBlue text-white">Activate Treatment<br><span class="text-blue-100 text-sm">Kích hoạt liệu trình</span></a>
+</section>
+</main>
+<script src="../assets/js/theme.js"></script>
+</body></html>

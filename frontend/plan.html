@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Interactive Plan • Frontend Theme</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com"></script><script>tailwind.config={theme:{extend:{colors:{medicalBlue:'#2F5D8A',softBeige:'#F8F5F1'}}}}</script><link rel="stylesheet" href="../assets/css/theme.css" /></head>
+<body data-state="diagnosed" data-step="plan" class="bg-white text-slate-800">
+<header class="border-b border-slate-200"><nav class="max-w-7xl mx-auto px-4 py-4 flex justify-between"><a href="index.html" class="heading text-2xl text-medicalBlue">Derma System Theme</a><a href="kit.html" class="text-medicalBlue">Next: Kit →</a></nav></header>
+<main class="max-w-6xl mx-auto px-4 py-8 space-y-6">
+<section class="ui-card"><p class="state-chip">State: <span data-state-label></span></p><div class="demo-switch mt-3 flex gap-2"><button data-set-state="pre-diagnosis" class="px-3 py-2 border rounded-full text-sm">Pre-diagnosis</button><button data-set-state="diagnosed" class="px-3 py-2 border rounded-full text-sm">Diagnosed</button><button data-set-state="active-treatment" class="px-3 py-2 border rounded-full text-sm">Active treatment</button></div></section>
+<section class="grid md:grid-cols-4 gap-3"><div data-flow-step class="flow-step"><strong>Diagnosis</strong><span class="bi-vi">Chẩn đoán</span></div><div data-flow-step class="flow-step"><strong>Plan</strong><span class="bi-vi">Phác đồ</span></div><div data-flow-step class="flow-step"><strong>Kit</strong><span class="bi-vi">Bộ liệu trình</span></div><div data-flow-step class="flow-step"><strong>Monitoring</strong><span class="bi-vi">Theo dõi</span></div></section>
+
+<section class="ui-card">
+  <h1 class="heading text-3xl">Interactive treatment timeline</h1>
+  <p class="bi-en">Click each phase to reveal treatment details.</p>
+  <p class="bi-vi">Nhấn vào từng phase để xem chi tiết điều trị.</p>
+  <div class="flex flex-wrap gap-2 mt-4">
+    <button data-phase-target="p1" class="phase-btn px-4 py-2 rounded-full border">Phase 1</button>
+    <button data-phase-target="p2" class="phase-btn px-4 py-2 rounded-full border">Phase 2</button>
+    <button data-phase-target="p3" class="phase-btn px-4 py-2 rounded-full border">Phase 3</button>
+  </div>
+  <div class="mt-5 space-y-3">
+    <div data-phase-panel="p1" class="ui-card hidden"><h3 class="font-semibold">Phase 1: Repair Window</h3><p class="bi-en">Calm inflammation and strengthen barrier first.</p><p class="bi-vi">Làm dịu viêm và củng cố hàng rào da trước.</p></div>
+    <div data-phase-panel="p2" class="ui-card hidden"><h3 class="font-semibold">Phase 2: Active Control</h3><p class="bi-en">Introduce treatment actives in controlled intensity.</p><p class="bi-vi">Đưa hoạt chất điều trị vào với cường độ có kiểm soát.</p></div>
+    <div data-phase-panel="p3" class="ui-card hidden"><h3 class="font-semibold">Phase 3: Maintenance</h3><p class="bi-en">Stabilize gains and reduce relapse triggers.</p><p class="bi-vi">Ổn định kết quả và giảm tác nhân tái phát.</p></div>
+  </div>
+</section>
+
+<section class="ui-card border-2 border-rose-100 bg-rose-50">
+  <h2 class="heading text-2xl text-rose-800">What if I do it wrong?</h2>
+  <p class="bi-en">Tap a mistake scenario to see likely consequences.</p>
+  <p class="bi-vi">Chọn một tình huống sai để xem hệ quả có thể gặp.</p>
+  <div class="mt-4 flex flex-wrap gap-2">
+    <button data-risk="skip_phase1" class="px-3 py-2 border rounded-full bg-white">Skip repair phase</button>
+    <button data-risk="swap_active" class="px-3 py-2 border rounded-full bg-white">Swap active randomly</button>
+    <button data-risk="stop_spf" class="px-3 py-2 border rounded-full bg-white">Stop SPF early</button>
+  </div>
+  <div data-risk-output class="ui-card mt-4">Choose a scenario above to simulate consequence.</div>
+</section>
+
+<section class="ui-card bg-softBeige">
+  <h2 class="heading text-2xl">System reminder</h2>
+  <p class="bi-en">You are not choosing products. You are following a controlled treatment system.</p>
+  <p class="bi-vi">Bạn không chọn sản phẩm rời. Bạn đang tuân thủ hệ thống điều trị có kiểm soát.</p>
+  <a href="kit.html" class="inline-block mt-4 px-5 py-3 rounded-full bg-medicalBlue text-white">Get Prescribed Kit<br><span class="text-blue-100 text-sm">Nhận liệu trình điều trị phù hợp</span></a>
+</section>
+</main>
+<script src="../assets/js/theme.js"></script>
+</body></html>

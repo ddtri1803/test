@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive Diagnosis • Frontend Theme</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script><script>tailwind.config={theme:{extend:{colors:{medicalBlue:'#2F5D8A',softBeige:'#F8F5F1'}}}}</script>
+  <link rel="stylesheet" href="../assets/css/theme.css" />
+</head>
+<body data-state="pre-diagnosis" data-step="diagnosis" class="bg-white text-slate-800">
+<header class="border-b border-slate-200"><nav class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center"><a href="index.html" class="heading text-2xl text-medicalBlue">Derma System Theme</a><a href="plan.html" class="text-medicalBlue">Next: Plan →</a></nav></header>
+
+<main class="max-w-5xl mx-auto px-4 py-8 space-y-6">
+  <section class="ui-card bg-softBeige"><p class="state-chip">State: <span data-state-label></span></p><div class="demo-switch mt-3 flex flex-wrap gap-2"><button data-set-state="pre-diagnosis" class="px-3 py-2 border rounded-full text-sm">Pre-diagnosis</button><button data-set-state="diagnosed" class="px-3 py-2 border rounded-full text-sm">Diagnosed</button><button data-set-state="active-treatment" class="px-3 py-2 border rounded-full text-sm">Active treatment</button></div></section>
+
+  <section class="grid md:grid-cols-4 gap-3"><div data-flow-step class="flow-step"><strong>Diagnosis</strong><span class="bi-vi">Chẩn đoán</span></div><div data-flow-step class="flow-step"><strong>Plan</strong><span class="bi-vi">Phác đồ</span></div><div data-flow-step class="flow-step"><strong>Kit</strong><span class="bi-vi">Bộ liệu trình</span></div><div data-flow-step class="flow-step"><strong>Monitoring</strong><span class="bi-vi">Theo dõi</span></div></section>
+
+  <section class="ui-card" data-quiz>
+    <h1 class="heading text-3xl">Diagnosis Quiz (one question at a time)</h1>
+    <p class="bi-en">Answer each step to let the system assign your treatment path.</p>
+    <p class="bi-vi">Trả lời từng bước để hệ thống gán lộ trình điều trị phù hợp.</p>
+    <div class="progress-track mt-4"><div class="progress-fill" data-quiz-progress></div></div>
+
+    <div class="mt-6" data-quiz-step>
+      <h2 class="font-semibold text-lg">Your skin type?</h2><p class="bi-vi">Loại da của bạn?</p>
+      <div class="grid sm:grid-cols-2 gap-3 mt-3"><button data-value="Oily" class="quiz-answer border rounded-lg p-3 text-left">Oily<br><span class="text-slate-500 text-sm">Da dầu</span></button><button data-value="Combination" class="quiz-answer border rounded-lg p-3 text-left">Combination<br><span class="text-slate-500 text-sm">Da hỗn hợp</span></button><button data-value="Dry" class="quiz-answer border rounded-lg p-3 text-left">Dry<br><span class="text-slate-500 text-sm">Da khô</span></button><button data-value="Sensitive" class="quiz-answer border rounded-lg p-3 text-left">Sensitive<br><span class="text-slate-500 text-sm">Da nhạy cảm</span></button></div>
+    </div>
+    <div class="mt-6 hidden" data-quiz-step>
+      <h2 class="font-semibold text-lg">Do you have active acne now?</h2><p class="bi-vi">Hiện tại bạn có mụn hoạt động không?</p>
+      <div class="grid sm:grid-cols-2 gap-3 mt-3"><button data-value="Yes" class="quiz-answer border rounded-lg p-3 text-left">Yes<br><span class="text-slate-500 text-sm">Có</span></button><button data-value="No" class="quiz-answer border rounded-lg p-3 text-left">No<br><span class="text-slate-500 text-sm">Không</span></button></div>
+    </div>
+    <div class="mt-6 hidden" data-quiz-step>
+      <h2 class="font-semibold text-lg">How reactive is your skin?</h2><p class="bi-vi">Mức độ dễ kích ứng của da?</p>
+      <div class="grid sm:grid-cols-3 gap-3 mt-3"><button data-value="Low" class="quiz-answer border rounded-lg p-3 text-left">Low<br><span class="text-slate-500 text-sm">Thấp</span></button><button data-value="Medium" class="quiz-answer border rounded-lg p-3 text-left">Medium<br><span class="text-slate-500 text-sm">Trung bình</span></button><button data-value="High" class="quiz-answer border rounded-lg p-3 text-left">High<br><span class="text-slate-500 text-sm">Cao</span></button></div>
+    </div>
+    <div class="mt-6 hidden" data-quiz-step>
+      <h2 class="font-semibold text-lg">Your priority outcome?</h2><p class="bi-vi">Mục tiêu ưu tiên của bạn?</p>
+      <div class="grid sm:grid-cols-2 gap-3 mt-3"><button data-value="Inflammation control" class="quiz-answer border rounded-lg p-3 text-left">Inflammation control<br><span class="text-slate-500 text-sm">Giảm viêm nhanh</span></button><button data-value="Long-term stability" class="quiz-answer border rounded-lg p-3 text-left">Long-term stability<br><span class="text-slate-500 text-sm">Ổn định lâu dài</span></button></div>
+    </div>
+
+    <div class="mt-6 flex gap-3"><button data-quiz-prev class="px-4 py-2 rounded-full border hidden">Previous</button><button data-quiz-next class="px-4 py-2 rounded-full bg-medicalBlue text-white">Next Question</button></div>
+    <div data-quiz-summary class="mt-5 hidden ui-card"></div>
+  </section>
+
+  <section data-after-quiz class="ui-card hidden">
+    <h2 class="heading text-2xl">Chat-like consultation</h2>
+    <p class="bi-en">Quick triage conversation before final onboarding.</p>
+    <p class="bi-vi">Hội thoại sàng lọc nhanh trước khi khởi tạo liệu trình.</p>
+    <div data-chat-log class="mt-4 space-y-2 max-h-60 overflow-y-auto"></div>
+    <div data-chat-options="timing" class="mt-3 hidden">
+      <div class="flex flex-wrap gap-2"><button data-chat-reply="urgency" class="px-3 py-2 border rounded-full">Start this week / Bắt đầu tuần này</button><button data-chat-reply="urgency" class="px-3 py-2 border rounded-full">Need 1–2 weeks / Cần 1–2 tuần</button></div>
+    </div>
+    <div data-chat-options="tolerance" class="mt-3 hidden">
+      <div class="flex flex-wrap gap-2"><button data-chat-reply="close" class="px-3 py-2 border rounded-full">Yes, low irritation / Có, ưu tiên ít kích ứng</button><button data-chat-reply="close" class="px-3 py-2 border rounded-full">Balanced speed / Cân bằng tốc độ</button></div>
+    </div>
+
+    <form data-chat-form class="mt-5 grid gap-3 hidden">
+      <label class="block">Name / Họ tên<input class="mt-1 w-full border rounded-lg p-3" placeholder="Nguyen Van A" /></label>
+      <label class="block">Phone / Số điện thoại<input class="mt-1 w-full border rounded-lg p-3" placeholder="090..." /></label>
+      <a href="plan.html" class="inline-block w-fit px-5 py-3 rounded-full bg-medicalBlue text-white">Unlock Plan<br><span class="text-blue-100 text-sm">Mở khóa phác đồ</span></a>
+    </form>
+  </section>
+</main>
+
+<script src="../assets/js/theme.js"></script>
+</body>
+</html>

@@ -1,29 +1,15 @@
 <!doctype html>
-<html lang="en">
+<html lang="vi">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dermatology Treatment Programs</title>
+    <title>Derma Protocol | Guided Treatment Journey</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              medicalBlue: '#2F5D8A',
-              softBeige: '#F8F5F1',
-              lightGrey: '#F3F4F6'
-            },
-            fontFamily: {
-              heading: ['Playfair Display', 'serif'],
-              body: ['Inter', 'sans-serif']
-            }
-          }
-        }
-      }
+      tailwind.config = { theme: { extend: { colors: { medicalBlue: '#2F5D8A', softBeige: '#F8F5F1', lightGrey: '#F3F4F6' }, fontFamily: { heading: ['Playfair Display', 'serif'], body: ['Inter', 'sans-serif'] } } } }
     </script>
     <link rel="stylesheet" href="themes/clinic.css" />
   </head>
@@ -32,10 +18,8 @@
       <nav class="max-w-6xl mx-auto px-4 py-4 flex flex-wrap items-center justify-between gap-4">
         <a href="index.html" class="font-heading text-2xl text-medicalBlue">Derma Protocol</a>
         <ul class="flex flex-wrap items-center gap-4 text-sm md:text-base">
-          <li><a class="nav-link" href="index.html">Home</a></li>
-          <li><a class="nav-link" href="skin-problems.html">Skin Problems</a></li>
-          <li><a class="nav-link" href="treatment-programs.html">Treatment Programs</a></li>
-          <li><a class="nav-link" href="skin-diagnosis.html">Skin Diagnosis</a></li>
+          <li><a class="nav-link" href="skin-problems.html">Skin Concerns</a></li>
+          <li><a class="nav-link" href="treatment-programs.html">Programs</a></li>
           <li><a class="nav-link" href="results.html">Results</a></li>
           <li><a class="nav-link" href="blog.html">Blog</a></li>
           <li><a class="btn-secondary" href="consultation.html">Consultation</a></li>
@@ -44,29 +28,33 @@
     </header>
 
     <main>
-      <section class="bg-softBeige py-20">
-        <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
+      <section class="bg-softBeige py-16">
+        <div class="max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-8 items-center">
           <div>
-            <p class="uppercase tracking-[0.2em] text-xs text-medicalBlue font-semibold">Medical Dermatology</p>
-            <h1 class="font-heading text-4xl md:text-5xl mt-4 mb-6 leading-tight">Scientific Skin Treatment Programs</h1>
-            <p class="text-slate-600 mb-8">Move from your skin concern to clinical diagnosis, structured treatment protocol, and one complete treatment kit.</p>
-            <a href="skin-diagnosis.html" class="btn-primary">Start Skin Diagnosis</a>
+            <p class="uppercase tracking-[0.2em] text-xs text-medicalBlue font-semibold">Guided Treatment Journey</p>
+            <h1 class="font-heading text-4xl md:text-5xl mt-4">From Skin Concern to Clinical Results</h1>
+            <p class="text-slate-600 mt-4">Thay vì cho khách tự đi lạc giữa nhiều trang, hệ thống sẽ dẫn theo hành trình chuẩn: concern → diagnosis → plan → treatment → results.</p>
+            <div class="mt-7 flex flex-wrap gap-3">
+              <a href="skin-diagnosis.html" class="btn-primary">Start Skin Diagnosis</a>
+              <a href="consultation.html" class="btn-secondary">Talk to Specialist</a>
+            </div>
           </div>
           <div class="card">
-            <h2 class="font-heading text-2xl mb-4">How Our Treatment Works</h2>
-            <ol class="space-y-3 text-slate-700">
-              <li><strong>1.</strong> Skin diagnosis</li>
-              <li><strong>2.</strong> Treatment protocol</li>
-              <li><strong>3.</strong> Personalized routine</li>
-            </ol>
+            <h2 class="font-heading text-2xl mb-4">Treatment Flow</h2>
+            <div class="flow-steps">
+              <div class="flow-step active"><strong>Step 1</strong>Diagnosis</div>
+              <div class="flow-step"><strong>Step 2</strong>Plan</div>
+              <div class="flow-step"><strong>Step 3</strong>Treatment</div>
+              <div class="flow-step"><strong>Step 4</strong>Results</div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="py-16">
+      <section class="py-14">
         <div class="max-w-6xl mx-auto px-4">
-          <h2 class="section-title">Skin Problems</h2>
-          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
+          <h2 class="section-title">Choose your skin concern</h2>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
             <a href="skin-problems.html#acne" class="pill">Acne</a>
             <a href="skin-problems.html#melasma" class="pill">Melasma</a>
             <a href="skin-problems.html#rosacea" class="pill">Rosacea</a>
@@ -75,35 +63,13 @@
         </div>
       </section>
 
-      <section class="bg-lightGrey py-16">
+      <section class="py-14 bg-lightGrey">
         <div class="max-w-6xl mx-auto px-4">
-          <h2 class="section-title">Featured Treatment Programs</h2>
-          <div class="grid md:grid-cols-3 gap-6 mt-8">
-            <article class="card"><h3 class="card-title">Acne Program</h3><p>12-week clinical protocol for active acne and post-acne control.</p></article>
-            <article class="card"><h3 class="card-title">Pigmentation Program</h3><p>Targeted plan for melasma and uneven tone with UV defense.</p></article>
-            <article class="card"><h3 class="card-title">Skin Barrier Repair</h3><p>Low-irritation recovery protocol for sensitive and reactive skin.</p></article>
+          <div class="cta-band text-center">
+            <h2 class="font-heading text-3xl">Next step: Start diagnosis to unlock your treatment plan</h2>
+            <p class="mt-3 text-blue-100">Diagnosis is now the primary action across the site.</p>
+            <a href="skin-diagnosis.html" class="inline-block mt-6 bg-white text-medicalBlue font-semibold px-6 py-3 rounded-full">Start Skin Diagnosis</a>
           </div>
-        </div>
-      </section>
-
-      <section class="py-16">
-        <div class="max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-8">
-          <div class="card">
-            <h2 class="section-title !mb-4">Before / After Results</h2>
-            <p class="text-slate-600">Real patient outcomes after following structured dermatology protocols.</p>
-            <a href="results.html" class="text-medicalBlue font-semibold mt-4 inline-block">View patient results →</a>
-          </div>
-          <div class="card">
-            <h2 class="section-title !mb-4">Doctor / Dermatology Explanation</h2>
-            <p class="text-slate-600">Each protocol is built with phase-based treatment logic, balancing efficacy and skin barrier safety.</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="bg-medicalBlue text-white py-14">
-        <div class="max-w-6xl mx-auto px-4 text-center">
-          <h2 class="font-heading text-3xl mb-4">Need a personalized treatment path?</h2>
-          <a href="consultation.html" class="inline-block bg-white text-medicalBlue font-semibold px-6 py-3 rounded-full">Get Skin Consultation</a>
         </div>
       </section>
     </main>

@@ -3,32 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Treatment Programs | Derma Protocol</title>
+    <title>Programs | Derma Protocol</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: { medicalBlue: '#2F5D8A', softBeige: '#F8F5F1', lightGrey: '#F3F4F6' },
-            fontFamily: { heading: ['Playfair Display', 'serif'], body: ['Inter', 'sans-serif'] }
-          }
-        }
-      }
-    </script>
+    <script>tailwind.config={theme:{extend:{colors:{medicalBlue:'#2F5D8A',softBeige:'#F8F5F1',lightGrey:'#F3F4F6'},fontFamily:{heading:['Playfair Display','serif'],body:['Inter','sans-serif']}}}}</script>
     <link rel="stylesheet" href="themes/clinic.css" />
   </head>
-  <body class="font-body text-slate-800 bg-white">
+  <body class="font-body text-slate-800">
     <header class="border-b border-slate-200 bg-white/95 sticky top-0 z-20">
       <nav class="max-w-6xl mx-auto px-4 py-4 flex flex-wrap items-center justify-between gap-4">
         <a href="index.html" class="font-heading text-2xl text-medicalBlue">Derma Protocol</a>
         <ul class="flex flex-wrap gap-4 items-center text-sm md:text-base">
-          <li><a class="nav-link" href="index.html">Home</a></li>
-          <li><a class="nav-link" href="skin-problems.html">Skin Problems</a></li>
-          <li><a class="nav-link" href="treatment-programs.html">Treatment Programs</a></li>
-          <li><a class="nav-link" href="skin-diagnosis.html">Skin Diagnosis</a></li>
+          <li><a class="nav-link" href="skin-problems.html">Skin Concerns</a></li>
+          <li><a class="nav-link" href="treatment-programs.html">Programs</a></li>
           <li><a class="nav-link" href="results.html">Results</a></li>
           <li><a class="nav-link" href="blog.html">Blog</a></li>
           <li><a class="btn-secondary" href="consultation.html">Consultation</a></li>
@@ -37,78 +26,34 @@
     </header>
 
     <main>
-      <section class="bg-softBeige py-16">
+      <section class="bg-softBeige py-14">
         <div class="max-w-6xl mx-auto px-4">
-          <p class="uppercase tracking-[0.2em] text-xs text-medicalBlue font-semibold">Protocol-first dermatology</p>
-          <h1 class="font-heading text-4xl md:text-5xl mt-3">Liệu trình điều trị chuyên sâu theo từng vấn đề da</h1>
-          <p class="mt-4 text-slate-600 max-w-3xl">
-            Mỗi chương trình điều trị được thiết kế đủ 3 giai đoạn: phục hồi hàng rào da, điều trị hoạt chất, duy trì kết quả.
-            Khách xem đầy đủ timeline, sản phẩm trong protocol và chỉ mua theo <strong>kit liệu trình</strong>.
-          </p>
-          <div class="mt-8 flex flex-wrap gap-3">
-            <a href="skin-diagnosis.html" class="btn-primary">Bắt đầu chẩn đoán da</a>
-            <a href="consultation.html" class="btn-secondary">Tư vấn cùng chuyên gia</a>
+          <h1 class="font-heading text-4xl">Treatment Programs</h1>
+          <p class="mt-3 text-slate-600">Programs hiển thị để khách hiểu framework điều trị, nhưng điểm vào thực tế vẫn là diagnosis.</p>
+          <div class="flow-steps mt-6 max-w-3xl">
+            <div class="flow-step active"><strong>Step 1</strong>Diagnosis</div>
+            <div class="flow-step"><strong>Step 2</strong>Plan</div>
+            <div class="flow-step"><strong>Step 3</strong>Treatment</div>
+            <div class="flow-step"><strong>Step 4</strong>Results</div>
           </div>
+          <a href="skin-diagnosis.html" class="btn-primary mt-6">Start Skin Diagnosis to Match Program</a>
         </div>
       </section>
 
       <section class="py-14">
-        <div class="max-w-6xl mx-auto px-4 grid lg:grid-cols-3 gap-6">
-          <article class="card">
-            <h2 class="card-title">Acne Control Program</h2>
-            <p class="text-slate-600">Liệu trình 12 tuần cho mụn viêm, mụn ẩn, thâm sau mụn và dầu thừa.</p>
-            <ul class="mt-4 space-y-2 text-sm text-slate-700 list-disc list-inside">
-              <li>Phase 1: Barrier Repair (2 tuần)</li>
-              <li>Phase 2: Active Acne Treatment (6 tuần)</li>
-              <li>Phase 3: Maintenance & Scar Prevention (4 tuần)</li>
-            </ul>
-            <div class="mt-6 flex gap-2">
-              <a href="treatment-plan.html" class="btn-primary">Xem liệu trình đầy đủ</a>
-            </div>
-          </article>
-
-          <article class="card">
-            <h2 class="card-title">Pigmentation Program</h2>
-            <p class="text-slate-600">Lộ trình điều trị nám/sạm dựa trên kiểm soát viêm, ức chế melanin và chống nắng y khoa.</p>
-            <ul class="mt-4 space-y-2 text-sm text-slate-700 list-disc list-inside">
-              <li>Phase 1: Calm & Repair</li>
-              <li>Phase 2: Corrective Brightening</li>
-              <li>Phase 3: Long-term UV Defense</li>
-            </ul>
-            <div class="mt-6"><a href="consultation.html" class="btn-secondary">Nhận phác đồ cá nhân</a></div>
-          </article>
-
-          <article class="card">
-            <h2 class="card-title">Sensitive Skin Repair</h2>
-            <p class="text-slate-600">Phù hợp da kích ứng, đỏ rát, châm chích sau treatment hoặc hàng rào da yếu.</p>
-            <ul class="mt-4 space-y-2 text-sm text-slate-700 list-disc list-inside">
-              <li>Phase 1: Inflammation Reset</li>
-              <li>Phase 2: Barrier Recovery</li>
-              <li>Phase 3: Tolerance Building</li>
-            </ul>
-            <div class="mt-6"><a href="consultation.html" class="btn-secondary">Tư vấn phục hồi da</a></div>
-          </article>
+        <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-6">
+          <article class="card"><h2 class="card-title">Acne Control Program</h2><p>Protocol 12 tuần theo phase để giảm mụn, ổn định da, ngừa tái phát.</p></article>
+          <article class="card"><h2 class="card-title">Pigmentation Program</h2><p>Điều trị nám/sạm theo nguyên tắc phục hồi da + ức chế sắc tố + UV defense.</p></article>
+          <article class="card"><h2 class="card-title">Barrier Repair Program</h2><p>Dành cho da nhạy cảm/kích ứng, ưu tiên phục hồi trước khi treatment nâng cao.</p></article>
         </div>
       </section>
 
-      <section class="py-14 bg-lightGrey">
-        <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-4 gap-4">
-          <div class="kpi"><strong>12 tuần</strong><span>Timeline chuẩn cho chương trình mụn</span></div>
-          <div class="kpi"><strong>3 phase</strong><span>Kiểm soát rủi ro kích ứng theo từng bước</span></div>
-          <div class="kpi"><strong>1 kit</strong><span>Mua trọn liệu trình thay vì từng món rời</span></div>
-          <div class="kpi"><strong>1:1 tư vấn</strong><span>Theo dõi đáp ứng da và tối ưu phác đồ</span></div>
-        </div>
-      </section>
-
-      <section class="py-14">
+      <section class="pb-16">
         <div class="max-w-6xl mx-auto px-4">
-          <div class="cta-band">
-            <h2 class="font-heading text-3xl">Đã xem đủ liệu trình? Bước tiếp theo là tư vấn cá nhân hóa</h2>
-            <p class="mt-3 text-blue-100">Đội ngũ sẽ xác nhận loại da, mức độ bệnh lý và đề xuất kit phù hợp nhất để bắt đầu điều trị.</p>
-            <div class="mt-6 flex flex-wrap gap-3">
-              <a href="consultation.html" class="inline-block bg-white text-medicalBlue font-semibold px-6 py-3 rounded-full">Tư vấn ngay</a>
-              <a href="skin-diagnosis.html" class="inline-block border border-white text-white px-6 py-3 rounded-full font-semibold">Hoàn thành chẩn đoán da</a>
-            </div>
+          <div class="cta-band text-center">
+            <h2 class="font-heading text-3xl">Next step: convert framework into your personal plan</h2>
+            <p class="mt-2 text-blue-100">Bấm chẩn đoán để hệ thống chọn đúng protocol thay vì tự chọn chương trình ngẫu nhiên.</p>
+            <a href="skin-diagnosis.html" class="inline-block mt-6 bg-white text-medicalBlue font-semibold px-6 py-3 rounded-full">Start Skin Diagnosis</a>
           </div>
         </div>
       </section>

@@ -1,0 +1,1 @@
+"""Secure FTP Manager package."""

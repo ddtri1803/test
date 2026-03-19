@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "secure-ftp-manager"
+version = "0.1.0"
+description = "Production-grade Python FTP management system with secure backend and desktop UI"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+gui = ["PySide6>=6.7"]
+api = ["fastapi>=0.111", "uvicorn>=0.30"]
+recommended = [
+  "PySide6>=6.7",
+  "fastapi>=0.111",
+  "uvicorn>=0.30",
+  "cryptography>=42.0",
+  "PyJWT>=2.8",
+  "SQLAlchemy>=2.0",
+  "passlib[bcrypt]>=1.7",
+  "pydantic>=2.6",
+]
+
+[tool.setuptools.packages.find]
+include = ["app*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

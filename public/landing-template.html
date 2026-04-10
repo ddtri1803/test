@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>V11 Landing Template</title>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <main class="max-w-4xl mx-auto px-4 py-10">
+    <section class="text-center space-y-4">
+      <h1 id="headline" class="text-4xl font-bold"></h1>
+      <p id="subheadline" class="text-lg text-gray-600"></p>
+      <button id="cta" class="bg-black text-white px-6 py-3 rounded-xl">Claim Discount</button>
+    </section>
+  </main>
+
+  <script src="/assets/tracking-pixel.js"></script>
+  <script>
+    const sample = {
+      slug: 'demo-product',
+      headline: 'Stop Daily Pain and Feel Better Fast',
+      subheadline: 'Built for buyers who need instant relief.',
+      hero: { cta: 'Claim Discount' }
+    };
+
+    document.getElementById('headline').textContent = sample.headline;
+    document.getElementById('subheadline').textContent = sample.subheadline;
+    document.getElementById('cta').textContent = sample.hero.cta;
+
+    window.V11Pixel.view(sample.slug);
+    document.getElementById('cta').addEventListener('click', function () {
+      window.V11Pixel.click(sample.slug, sample.hero.cta);
+    });
+  </script>
+</body>
+</html>
